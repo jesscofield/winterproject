@@ -33,7 +33,7 @@
           <a href="index.html" class="nav-link"> home </a>
           <a href="about.html" class="nav-link"> about </a>
           <a href="tags.html" class="nav-link"> tags </a>
-          <a href="recipes.html" class="nav-link"> recipes </a>
+          <a href="/main/recipes" class="nav-link"> recipes </a>
           <a href="/admin/recipes.html" class="nav-link">admin</a>
 
           <div class="nav-link contact-link">

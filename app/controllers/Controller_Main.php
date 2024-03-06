@@ -10,7 +10,8 @@ class Controller_Main
 
     public function action_recipes()
     {
-        View::render('main/recipes');
+        $recipes = Recipe::findAll();
+        View::render('main/recipes', ['recipes' => $recipes]);
     }
 
     public function action_recipe()
