@@ -26,4 +26,10 @@ class Controller_Main
         $tags = Tag::findAll();
         View::render('main/tags', ['tags' => $tags]);
     }
+
+    public function action_tag()
+    {
+        $tag = Tag::findOne($_GET['id']);
+        View::render('main/tag', ['tag' => $tag]);
+    }
 }

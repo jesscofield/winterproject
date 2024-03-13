@@ -16,7 +16,7 @@
             <h4>recipes</h4>
             <div class="tags-list">
             <?php foreach ($tags as $tag): ?>
-                <a href="tag-template.html"><?php echo $tag['name']; ?> (1)</a>
+                <a href="/main/tag?id=<?php echo $tag['id']; ?>"><?php echo $tag['name']; ?> (1)</a>
             <?php endforeach; ?>
             </div>
         </div>
