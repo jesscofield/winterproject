@@ -5,6 +5,8 @@ class Controller_Main
     public function action_index()
     {
         $recipes = Recipe::findAll();
+        $tags = Tag::findAll();
+        debug($tags);
         View::render('main/index', ['recipes' => $recipes]);
     }
 

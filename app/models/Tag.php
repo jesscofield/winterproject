@@ -1,9 +1,9 @@
 <?php
 
-class Recipe extends Model
+class Tag extends Model
 {
     public static function getTable()
     {
-        return 'recipes';
+        return 'tags';
     }
 }
