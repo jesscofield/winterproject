@@ -15,8 +15,7 @@ class Model
 
     public static function findAll() 
     {
-        self::connect();
-        $table = self::getTable();
+        $table = static::getTable();
         $sql = "SELECT * FROM `$table`";
 
         $stmt = self::$db->query($sql);
@@ -25,8 +24,7 @@ class Model
 
     public static function findOne($id) 
     {
-        self::connect();
-        $table = self::getTable();
+        $table = static::getTable();
         $sql = "SELECT * FROM `$table` WHERE `id` = :id";
         $data = ['id'=>$id];
         $stmt = self::$db->prepare($sql);

@@ -5,4 +5,5 @@ include 'app/core/View.php';
 include 'autoload.php';
 include 'functions.php';
 
+Model::connect();
 Route::start();
