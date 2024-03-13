@@ -12,6 +12,7 @@ class View
 
         include "app/views/layouts/main_layout.php"; 
     }
+    
     public static function admin($template, $data = null)
     {
         if(is_array($data)){
