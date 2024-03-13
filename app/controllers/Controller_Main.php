@@ -6,8 +6,7 @@ class Controller_Main
     {
         $recipes = Recipe::findAll();
         $tags = Tag::findAll();
-        debug($tags);
-        View::render('main/index', ['recipes' => $recipes]);
+        View::render('main/index', ['recipes' => $recipes, 'tags' => $tags]);
     }
 
     public function action_recipes()
@@ -20,5 +19,11 @@ class Controller_Main
     {
         $recipe = Recipe::findOne($_GET['id']);
         View::render('main/recipe', ['recipe' => $recipe]);
+    }
+
+    public function action_tags()
+    {
+        $tags = Tag::findAll();
+        View::render('main/tags', ['tags' => $tags]);
     }
 }

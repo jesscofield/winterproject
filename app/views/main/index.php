@@ -15,10 +15,9 @@
         <div class="tags-container">
             <h4>recipes</h4>
             <div class="tags-list">
-            <a href="tag-template.html">Beef (1)</a>
-            <a href="tag-template.html">Breakfast (2)</a>
-            <a href="tag-template.html">Carrots (3)</a>
-            <a href="tag-template.html">Food (4)</a>
+            <?php foreach ($tags as $tag): ?>
+                <a href="tag-template.html"><?php echo $tag['name']; ?> (1)</a>
+            <?php endforeach; ?>
             </div>
         </div>
         <!-- end of tag container -->
