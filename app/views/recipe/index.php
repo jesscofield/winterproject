@@ -22,7 +22,7 @@
                 <tr>
                     <th scope="row"><?php echo $num++; ?></th>
                     <td>
-                        <a href="single_recipe.html"><?php echo $recipe['name']; ?></a>	
+                        <a href="/recipe/view?id=<?php echo $recipe['id']; ?>"><?php echo $recipe['name']; ?></a>	
                     </td>
                     <td><img src="/assets/img/recipes/<?php echo $recipe['img']; ?>" height="100px"></td>
                     <td><?php echo $recipe['prep_time']; ?> min</td>

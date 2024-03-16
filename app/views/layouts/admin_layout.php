@@ -20,7 +20,7 @@
                 <a class="nav-link" href="../public/index.html">Home</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="recipes.html">Recipes</a>
+                <a class="nav-link" href="/recipe/index">Recipes</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="tags.html">Tags</a>
