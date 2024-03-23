@@ -6,4 +6,13 @@ class Recipe extends Model
     {
         return 'recipes';
     }
+
+    public static function add($data)
+    {
+        $data['img'] = "test";
+        $sql = "INSERT INTO `recipes`(`name`, `description`, `img`, `prep_time`, `cook_time`, `serving`) 
+        VALUES (:name, :description, :img, :prep, :cook, :serving)";
+        $stmt = self::$db->prepare($sql);
+        return $stmt->execute($data);
+    }
 }

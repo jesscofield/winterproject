@@ -3,7 +3,7 @@
 <div class="container">
 	<h1 class="text-center">Recipes</h1>
 	
-	<a href="form.html" class="btn btn-primary mb-3" role="button">Add recipe</a>
+	<a href="/recipe/add" class="btn btn-primary mb-3" role="button">Add recipe</a>
 	
 	<table class="table table-bordered table-hover">
 		<thead class="thead-dark">

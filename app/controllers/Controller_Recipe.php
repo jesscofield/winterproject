@@ -13,4 +13,21 @@ class Controller_Recipe
         $recipe = Recipe::findOne($_GET['id']); 
         View::admin('recipe/view', ['recipe' => $recipe]);
     }
+
+    public function action_add()
+    {
+        if($_POST)
+        {
+            $result = Recipe::add($_POST);
+            if($result)
+            {
+                header('location: /recipe/index?mess=add_recipe');
+            }
+            else 
+            {
+                header('location: /recipe/index?error=add_recipe');
+            }
+        }
+        View::admin('recipe/add');
+    }
 }
