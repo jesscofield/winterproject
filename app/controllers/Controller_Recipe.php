@@ -18,16 +18,52 @@ class Controller_Recipe
     {
         if($_POST)
         {
+            $this->validate();
+            $_POST['img'] = $this->uploadFile();
             $result = Recipe::add($_POST);
-            if($result)
-            {
-                header('location: /recipe/index?mess=add_recipe');
-            }
-            else 
-            {
-                header('location: /recipe/index?error=add_recipe');
-            }
+            $this->redirect($result);
         }
-        View::admin('recipe/add');
+        else
+        {
+            View::admin('recipe/add');
+        }
+    }
+
+    private function uploadFile()
+    {
+        $photo = new FileUploader('img', 10000000, ['jpg', 'jpeg', 'png']);
+
+        try {
+            $photo->uploadFile('assets/img/recipes/');
+            return $photo->name;
+        }
+        catch(Exception $e) {
+            header("location: /recipe/add?error=" . $e->getMessage());
+            exit;
+        }
+    }
+
+    private function validate()
+    {
+        try {
+            $valid = new Validator($_POST);
+            $valid->empty();
+        }
+        catch(Exception $e) {
+            header('location: /recipe/add?error=' . $e->getMessage());
+            exit;
+        }
+    }
+
+    private function redirect($result)
+    {
+        if($result)
+        {
+            header('location: /recipe/index?mess=add_recipe');
+        }
+        else 
+        {
+            header('location: /recipe/add?error=add_recipe');
+        }
     }
 }

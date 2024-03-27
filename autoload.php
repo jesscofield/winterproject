@@ -7,7 +7,7 @@ function model_autoloader($class) {
 }
 
 function helper_autoloader($class) {
-    if($class == "Validate" || $class == "File" || $class == "Message"){
+    if($class == "Validator" || $class == "FileUploader"){
         require_once __DIR__ . "/app/helpers/" . $class . ".php"; 
     }
 }
