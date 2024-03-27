@@ -29,7 +29,7 @@
                     <td><?php echo $recipe['cook_time']; ?> min</td>
                     <td><?php echo $recipe['serving']; ?></td>
                     <td>
-                        <a href="#" class="btn-sm btn-danger">Delete</a>
+                        <a href="/recipe/delete?id=<?php echo $recipe['id']; ?>" class="btn-sm btn-danger">Delete</a>
                         <a href="#" class="btn-sm btn-primary">Edit</a>
                     </td>
                 </tr>

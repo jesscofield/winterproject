@@ -66,4 +66,22 @@ class Controller_Recipe
             header('location: /recipe/add?error=add_recipe');
         }
     }
+
+    public function action_delete()
+    {
+        $recipe = Recipe::findOne($_GET['id']);
+        $result = Recipe::delete($_GET['id']);
+        if($result)
+        {
+            if(file_exists('assets/img/recipes/' . $recipe['img']))
+            {
+                unlink('assets/img/recipes/' . $recipe['img']);
+            }
+            header('location: /recipe/index?mess=delete_recipe');
+        }
+        else 
+        {
+            header('location: /recipe/index?error=delete_recipe');
+        }
+    }
 }

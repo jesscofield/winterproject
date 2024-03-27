@@ -14,4 +14,10 @@ class Recipe extends Model
         $stmt = self::$db->prepare($sql);
         return $stmt->execute($data);
     }
+
+    public static function delete($id)
+    {
+        $sql = "DELETE FROM `recipes` WHERE `id` = $id";
+        return self::$db->exec($sql);
+    }
 }
