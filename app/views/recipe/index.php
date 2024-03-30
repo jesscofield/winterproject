@@ -30,7 +30,7 @@
                     <td><?php echo $recipe['serving']; ?></td>
                     <td>
                         <a href="/recipe/delete?id=<?php echo $recipe['id']; ?>" class="btn-sm btn-danger">Delete</a>
-                        <a href="#" class="btn-sm btn-primary">Edit</a>
+                        <a href="/recipe/edit?id=<?php echo $recipe['id']; ?>" class="btn-sm btn-primary">Edit</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

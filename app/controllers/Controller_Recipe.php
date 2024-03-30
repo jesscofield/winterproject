@@ -18,10 +18,10 @@ class Controller_Recipe
     {
         if($_POST)
         {
-            $this->validate();
+            $this->validate("add");
             $_POST['img'] = $this->uploadFile();
             $result = Recipe::add($_POST);
-            $this->redirect($result);
+            $this->redirect($result, "add");
         }
         else
         {
@@ -43,27 +43,48 @@ class Controller_Recipe
         }
     }
 
-    private function validate()
+    private function validate($action)
     {
         try {
             $valid = new Validator($_POST);
             $valid->empty();
         }
         catch(Exception $e) {
-            header('location: /recipe/add?error=' . $e->getMessage());
+            if($action == "add")
+            {
+                header('location: /recipe/add?error=' . $e->getMessage());
+            }
+            else
+            {
+                header('location: /recipe/edit?error=' . $e->getMessage());
+            }
             exit;
         }
     }
 
-    private function redirect($result)
+    private function redirect($result, $action)
     {
         if($result)
         {
-            header('location: /recipe/index?mess=add_recipe');
+            if($action == "add")
+            {
+                header('location: /recipe/index?mess=add_recipe');
+            }
+            else
+            {
+                header('location: /recipe/index?mess=edit_recipe');
+            }
         }
         else 
         {
-            header('location: /recipe/add?error=add_recipe');
+            if($action == "add")
+            {
+                header('location: /recipe/add?error=add_recipe');
+            }
+            else
+            {
+                header('location: /recipe/edit?error=edit_recipe');
+            }
         }
     }
 
@@ -82,6 +103,27 @@ class Controller_Recipe
         else 
         {
             header('location: /recipe/index?error=delete_recipe');
+        }
+    }
+
+    public function action_edit()
+    {
+        if($_POST)
+        {
+            $this->validate("edit");
+            if($_FILES['img'])
+            {
+                $filename = $this->uploadFile();
+                Recipe::editImg($filename, $_POST['id']);
+            }
+            $result = Recipe::edit($_POST, $filename);
+            // debug($result);
+            $this->redirect($result, "edit");
+        }
+        else
+        {
+            $recipe = Recipe::findOne($_GET['id']);
+            View::admin('recipe/edit', ['recipe' => $recipe]);
         }
     }
 }
