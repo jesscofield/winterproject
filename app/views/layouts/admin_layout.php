@@ -23,7 +23,7 @@
                 <a class="nav-link" href="/recipe/index">Recipes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="tags.html">Tags</a>
+                <a class="nav-link" href="/tag/index">Tags</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="tools.html">Tools</a>
