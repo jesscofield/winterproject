@@ -15,12 +15,6 @@ class Recipe extends Model
         return $stmt->execute($data);
     }
 
-    public static function delete($id)
-    {
-        $sql = "DELETE FROM `recipes` WHERE `id` = $id";
-        return self::$db->exec($sql);
-    }
-
     public static function edit($data)
     {
         $sql = "UPDATE `recipes` SET `name`= :name,`description`= :description,`prep_time`= :prep,`cook_time`= :cook,`serving`= :serving WHERE `id`= :id";

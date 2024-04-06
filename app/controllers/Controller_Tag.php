@@ -67,25 +67,20 @@ class Controller_Tag
         }
     }
 
-    /* public function action_delete()
+    public function action_delete()
     {
-        $recipe = Recipe::findOne($_GET['id']);
-        $result = Recipe::delete($_GET['id']);
-        if($result)
+        $result = Tag::delete($_GET['id']);
+        if($result) 
         {
-            if(file_exists('assets/img/recipes/' . $recipe['img']))
-            {
-                unlink('assets/img/recipes/' . $recipe['img']);
-            }
-            header('location: /recipe/index?mess=delete_recipe');
+            header('location: /tag/index?mess=delete_tag');
         }
         else 
         {
-            header('location: /recipe/index?error=delete_recipe');
+            header('location: /tag/index?error=delete_tag');
         }
     }
 
-    public function action_edit()
+    /* public function action_edit()
     {
         if($_POST)
         {

@@ -31,4 +31,11 @@ class Model
         $stmt->execute($data);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    public static function delete($id)
+    {
+        $table = static::getTable();
+        $sql = "DELETE FROM `$table` WHERE `id` = $id";
+        return self::$db->exec($sql);
+    }
 }
