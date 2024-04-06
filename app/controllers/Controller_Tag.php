@@ -8,38 +8,17 @@ class Controller_Tag
         View::admin('tag/index', ['tags' => $tags]);
     }
 
-    public function action_view()
-    {
-        $recipe = Recipe::findOne($_GET['id']); 
-        View::admin('recipe/view', ['recipe' => $recipe]);
-    }
-
-    /* public function action_add()
+    public function action_add()
     {
         if($_POST)
         {
             $this->validate("add");
-            $_POST['img'] = $this->uploadFile();
-            $result = Recipe::add($_POST);
+            $result = Tag::add($_POST);
             $this->redirect($result, "add");
         }
         else
         {
-            View::admin('recipe/add');
-        }
-    }
-
-    private function uploadFile()
-    {
-        $photo = new FileUploader('img', 10000000, ['jpg', 'jpeg', 'png']);
-
-        try {
-            $photo->uploadFile('assets/img/recipes/');
-            return $photo->name;
-        }
-        catch(Exception $e) {
-            header("location: /recipe/add?error=" . $e->getMessage());
-            exit;
+            View::admin('tag/add');
         }
     }
 
@@ -52,11 +31,11 @@ class Controller_Tag
         catch(Exception $e) {
             if($action == "add")
             {
-                header('location: /recipe/add?error=' . $e->getMessage());
+                header('location: /tag/add?error=' . $e->getMessage());
             }
             else
             {
-                header('location: /recipe/edit?error=' . $e->getMessage());
+                header('location: /tag/edit?error=' . $e->getMessage());
             }
             exit;
         }
@@ -68,27 +47,27 @@ class Controller_Tag
         {
             if($action == "add")
             {
-                header('location: /recipe/index?mess=add_recipe');
+                header('location: /tag/index?mess=add_tag');
             }
             else
             {
-                header('location: /recipe/index?mess=edit_recipe');
+                header('location: /tag/index?mess=edit_tag');
             }
         }
         else 
         {
             if($action == "add")
             {
-                header('location: /recipe/add?error=add_recipe');
+                header('location: /tag/add?error=add_tag');
             }
             else
             {
-                header('location: /recipe/edit?error=edit_recipe');
+                header('location: /tag/edit?error=edit_tag');
             }
         }
     }
 
-    public function action_delete()
+    /* public function action_delete()
     {
         $recipe = Recipe::findOne($_GET['id']);
         $result = Recipe::delete($_GET['id']);
