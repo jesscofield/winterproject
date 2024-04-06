@@ -62,7 +62,7 @@ class Controller_Tag
             }
             else
             {
-                header('location: /tag/edit?error=edit_tag');
+                header('location: /tag/edit?error=edit_tag&id=' . $_POST['id']);
             }
         }
     }
@@ -80,24 +80,18 @@ class Controller_Tag
         }
     }
 
-    /* public function action_edit()
+    public function action_edit()
     {
         if($_POST)
         {
             $this->validate("edit");
-            if($_FILES['img'])
-            {
-                $filename = $this->uploadFile();
-                Recipe::editImg($filename, $_POST['id']);
-            }
-            $result = Recipe::edit($_POST, $filename);
-            // debug($result);
+            $result = Tag::edit($_POST);
             $this->redirect($result, "edit");
         }
         else
         {
-            $recipe = Recipe::findOne($_GET['id']);
-            View::admin('recipe/edit', ['recipe' => $recipe]);
+            $tag = Tag::findOne($_GET['id']);
+            View::admin('tag/edit', ['tag' => $tag]);
         }
-    } */
+    }
 }

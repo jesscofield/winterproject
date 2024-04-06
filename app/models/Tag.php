@@ -13,4 +13,11 @@ class Tag extends Model
         $stmt = self::$db->prepare($sql);
         return $stmt->execute($data);
     }
+
+    public static function edit($data)
+    {
+        $sql = "UPDATE `tags` SET `name`= :name WHERE `id`= :id";
+        $stmt = self::$db->prepare($sql);
+        return $stmt->execute($data);
+    }
 }

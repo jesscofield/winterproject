@@ -83,7 +83,7 @@ class Controller_Recipe
             }
             else
             {
-                header('location: /recipe/edit?error=edit_recipe');
+                header('location: /recipe/edit?error=edit_recipe&id=' . $_POST['id']);
             }
         }
     }
