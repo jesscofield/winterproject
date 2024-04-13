@@ -1,7 +1,8 @@
 <?php
 
 function model_autoloader($class) {
-    if($class == "Recipe" || $class == "Tag" || $class == "RecipeTag" || $class == "Tool" || $class == "Model"){
+    if(file_exists(__DIR__ . "/app/models/" . $class . ".php"))
+    {
         require_once __DIR__ . "/app/models/" . $class . ".php"; 
     }
 }

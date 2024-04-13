@@ -11,7 +11,9 @@ class Controller_Recipe
     public function action_view()
     {
         $recipe = Recipe::findOne($_GET['id']); 
-        View::admin('recipe/view', ['recipe' => $recipe]);
+        $tools = Recipe::getTools($_GET['id']);
+        $tags = Recipe::getTags($_GET['id']); 
+        View::admin('recipe/view', ['recipe' => $recipe, 'tools' => $tools, 'tags' => $tags]);
     }
 
     public function action_add()

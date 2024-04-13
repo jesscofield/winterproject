@@ -86,20 +86,16 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Breakfast</td>
-                    <td>
-                        <a href="#" class="btn-sm btn-danger">Delete</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Beef</td>
-                    <td>
-                        <a href="#" class="btn-sm btn-danger">Delete</a>
-                    </td>
-                </tr>
+                    <?php $num = 1; ?>
+                    <?php foreach($tags as $tag): ?>
+                        <tr>
+                            <th scope="row"><?php echo $num++; ?></th>
+                            <td><?php echo $tag['name']; ?></td>
+                            <td>
+                                <a href="#" class="btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
@@ -108,7 +104,7 @@
         <div class="tab-pane fade" id="tools">
             <h2 class="text-center">Recipe tools</h2>
             <a href="#" class="btn btn-primary mb-3" role="button">Add Tool</a>
-
+            <?php $num = 1; ?>
             <table class="table table-bordered table-hover">
                 <thead class="thead-dark">
                 <tr>
@@ -118,34 +114,15 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Hand Blender</td>
-                    <td>
-                        <a href="#" class="btn-sm btn-danger">Delete</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Large Heavy Pot With Lid</td>
-                    <td>
-                        <a href="#" class="btn-sm btn-danger">Delete</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Measuring Spoons</td>
-                    <td>
-                        <a href="#" class="btn-sm btn-danger">Delete</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>Measuring Cups</td>
-                    <td>
-                        <a href="#" class="btn-sm btn-danger">Delete</a>
-                    </td>
-                </tr>
+                    <?php foreach($tools as $tool): ?>
+                        <tr>
+                            <th scope="row"><?php echo $num++; ?></th>
+                            <td><?php echo $tool['name']; ?></td>
+                            <td>
+                                <a href="#" class="btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>

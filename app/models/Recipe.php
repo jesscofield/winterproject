@@ -39,4 +39,15 @@ class Recipe extends Model
         }
         return $tags;
     }
+
+    public static function getTools($id)
+    {
+        $items = RecipeTool::getTools($id);
+        if(!$items) return;
+        foreach($items as $item) 
+        {
+            $tools[] = Tool::findOne($item['tool_id']);
+        }
+        return $tools;
+    }
 }
