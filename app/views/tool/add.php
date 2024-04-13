@@ -2,7 +2,7 @@
 	<h1 class="text-center">Add tool form</h1>
 	<div class="row">
 		<div class="col-6 mx-auto">
-			<form action="/tool/add" method="post">
+			<form action="/tools/add" method="post">
 				<div class="form-group">
 					<label for="name">Name</label>
 					<input type="text" class="form-control" name="name">

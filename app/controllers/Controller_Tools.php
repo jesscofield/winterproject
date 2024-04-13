@@ -47,22 +47,22 @@ class Controller_Tools
         {
             if($action == "add")
             {
-                header('location: /tool/index?mess=add_tool');
+                header('location: /tools/index?mess=add_tool');
             }
             else
             {
-                header('location: /tool/index?mess=edit_tool');
+                header('location: /tools/index?mess=edit_tool');
             }
         }
         else 
         {
             if($action == "add")
             {
-                header('location: /tool/add?error=add_tool');
+                header('location: /tools/add?error=add_tool');
             }
             else
             {
-                header('location: /tool/edit?error=edit_tool&id=' . $_POST['id']);
+                header('location: /tools/edit?error=edit_tool&id=' . $_POST['id']);
             }
         }
     }
@@ -72,11 +72,11 @@ class Controller_Tools
         $result = Tool::delete($_GET['id']);
         if($result) 
         {
-            header('location: /tool/index?mess=delete_tool');
+            header('location: /tools/index?mess=delete_tool');
         }
         else 
         {
-            header('location: /tool/index?error=delete_tool');
+            header('location: /tools/index?error=delete_tool');
         }
     }
 
@@ -90,7 +90,7 @@ class Controller_Tools
         }
         else
         {
-            $tag = Tool::findOne($_GET['id']);
+            $tool = Tool::findOne($_GET['id']);
             View::admin('tool/edit', ['tool' => $tool]);
         }
     }
