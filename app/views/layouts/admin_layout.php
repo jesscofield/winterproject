@@ -26,7 +26,7 @@
                 <a class="nav-link" href="/tag/index">Tags</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="tools.html">Tools</a>
+                <a class="nav-link" href="/tools/index">Tools</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="contacts.html">Coontacts</a>

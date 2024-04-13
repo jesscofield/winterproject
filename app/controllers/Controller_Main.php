@@ -18,6 +18,7 @@ class Controller_Main
     public function action_recipe()
     {
         $recipe = Recipe::findOne($_GET['id']);
+        $tags = Recipe::getTags($_GET['id']);
         View::render('main/recipe', ['recipe' => $recipe]);
     }
 

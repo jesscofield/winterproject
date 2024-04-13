@@ -28,4 +28,15 @@ class Recipe extends Model
         // debug($sql);
         return self::$db->exec($sql);
     }
+
+    public static function getTags($id)
+    {
+        $items = RecipeTag::getTags($id);
+        if(!$items) return;
+        foreach($items as $item) 
+        {
+            $tags[] = Tag::findOne($item['tag_id']);
+        }
+        return $tags;
+    }
 }
