@@ -75,7 +75,7 @@
         <!-- tags -->
         <div class="tab-pane fade" id="tags">
             <h2 class="text-center">Recipe tags</h2>
-            <a href="#" class="btn btn-primary mb-3" role="button">Add Tag</a>
+            <a href="/recipe/add_tag?id=<?php echo $recipe['id']; ?>" class="btn btn-primary mb-3" role="button">Add Tag</a>
 
             <table class="table table-bordered table-hover">
                 <thead class="thead-dark">

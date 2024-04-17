@@ -128,4 +128,31 @@ class Controller_Recipe
             View::admin('recipe/edit', ['recipe' => $recipe]);
         }
     }
+
+    public function action_add_tag()
+    {
+        if($_POST)
+        {
+            $check = RecipeTag::check($_POST);
+            if($check)
+            {
+                header('location: /recipe/add_tag?error=tag_recipe_exists&id=' . $_POST['recipe_id']);
+                exit;
+            }
+            $result = RecipeTag::add($_POST);
+            if($result)
+            {
+                header('location: /recipe/view?mess=tag_recipe_add&id=' . $_POST['recipe_id']);
+            }
+            else
+            {
+                header('location: /recipe/view?error=tag_recipe_add&id=' . $_POST['recipe_id']);
+            }
+        }
+        else
+        {
+            $tags = Tag::findAll();
+            View::admin('recipe/add_tag', ['tags' => $tags, 'recipe_id' => $_GET['id']]);
+        }
+    }
 }
