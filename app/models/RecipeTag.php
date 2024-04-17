@@ -34,4 +34,10 @@ class RecipeTag extends Model
         $stmt = self::$db->query($sql);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    public static function deleteRow($data)
+    {
+        $sql = "DELETE FROM `recipes_tags` WHERE `recipe_id` = {$data['recipe_id']} AND `tag_id` = {$data['tag_id']}";
+        return self::$db->exec($sql);
+    }
 } 

@@ -13,6 +13,7 @@ class Controller_Recipe
         $recipe = Recipe::findOne($_GET['id']); 
         $tools = Recipe::getTools($_GET['id']);
         $tags = Recipe::getTags($_GET['id']); 
+        // debug($tags);
         View::admin('recipe/view', ['recipe' => $recipe, 'tools' => $tools, 'tags' => $tags]);
     }
 
@@ -153,6 +154,20 @@ class Controller_Recipe
         {
             $tags = Tag::findAll();
             View::admin('recipe/add_tag', ['tags' => $tags, 'recipe_id' => $_GET['id']]);
+        }
+    }
+
+    public function action_delete_tag()
+    {
+        // debug($_GET);
+        $result = RecipeTag::deleteRow($_GET);
+        if($result)
+        {
+            header('location: /recipe/view?mess=tag_recipe_delete&id=' . $_GET['recipe_id']);
+        }
+        else
+        {
+            header('location: /recipe/view?error=tag_recipe_delete&id=' . $_GET['recipe_id']);
         }
     }
 }

@@ -26,10 +26,10 @@
             </article>
         </div>
         <p class="recipe-tags">
-            Tags : <a href="tag-template.html">beef</a>
-            <a href="tag-template.html">breakfast</a>
-            <a href="tag-template.html">pancakes</a>
-            <a href="tag-template.html">food</a>
+            Tags : 
+            <?php foreach($tags as $tag): ?>
+                <a href="/main/tag?id=<?php echo $tag['id']; ?>"><?php echo $tag['name']; ?></a>
+            <?php endforeach; ?>
         </p>
         </article>
     </section>

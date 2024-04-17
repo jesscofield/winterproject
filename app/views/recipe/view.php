@@ -92,7 +92,7 @@
                             <th scope="row"><?php echo $num++; ?></th>
                             <td><?php echo $tag['name']; ?></td>
                             <td>
-                                <a href="#" class="btn-sm btn-danger">Delete</a>
+                                <a href="/recipe/delete_tag?recipe_id=<?php echo $recipe['id']; ?>&tag_id=<?php echo $tag['id']; ?>" class="btn-sm btn-danger">Delete</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
