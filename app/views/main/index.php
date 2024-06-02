@@ -4,8 +4,8 @@
     <header class="hero">
     <div class="hero-container">
         <div class="hero-text">
-        <h1>simply recipes</h1>
-        <h4>no fluff, just recipes</h4>
+        <h1>flavorfusion</h1>
+        <h4>where every bite tells a story</h4>
         </div>
     </div>
     </header>

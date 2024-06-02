@@ -28,6 +28,13 @@ class RecipeTag extends Model
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public static function getRecipes($tag_id)
+    {
+        $sql = "SELECT * FROM `recipes_tags` WHERE `tag_id` = $tag_id";
+        $stmt = self::$db->query($sql);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public static function check($data)
     {
         $sql = "SELECT * FROM `recipes_tags` WHERE `recipe_id` = {$data['recipe_id']} AND `tag_id` = {$data['tag_id']}";

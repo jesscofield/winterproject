@@ -20,4 +20,15 @@ class Tag extends Model
         $stmt = self::$db->prepare($sql);
         return $stmt->execute($data);
     }
+
+    public static function getRecipes($tag_id)
+    {
+        $items = RecipeTag::getRecipes($tag_id);
+        if(!$items) return;
+        foreach($items as $item) 
+        {
+            $recipes[] = Recipe::findOne($item['recipe_id']);
+        }
+        return $recipes;
+    }
 }

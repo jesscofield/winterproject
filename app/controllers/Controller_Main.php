@@ -31,6 +31,7 @@ class Controller_Main
     public function action_tag()
     {
         $tag = Tag::findOne($_GET['id']);
-        View::render('main/tag', ['tag' => $tag]);
+        $recipes = Tag::getRecipes($tag['id']);
+        View::render('main/tag', ['tag' => $tag, 'recipes' => $recipes]);
     }
 }

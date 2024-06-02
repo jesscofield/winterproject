@@ -29,7 +29,7 @@
                 <a class="nav-link" href="/tools/index">Tools</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="contacts.html">Coontacts</a>
+                <a class="nav-link" href="contacts.html">Contacts</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Pages</a>

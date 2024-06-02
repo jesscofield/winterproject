@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simply Recipes || Final</title>
+    <title>flavorfusion</title>
     <!-- favicon -->
     <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon" />
     <!-- normalize -->
@@ -23,7 +23,7 @@
       <div class="nav-center">
         <div class="nav-header">
           <a href="/" class="nav-logo">
-            <img src="/assets/img/logo.svg" alt="simply recipes" />
+            <img src="/assets/img/logo.svg" alt="flavorfusion" />
           </a>
           <button class="nav-btn btn">
             <i class="fas fa-align-justify"></i>
@@ -50,8 +50,7 @@
     <footer class="page-footer">
       <p>
         &copy; <span id="date"></span>
-        <span class="footer-logo">SimplyRecipes</span> Built by
-        <a href="https://www.johnsmilga.com/">Coding Addict</a>
+        <span class="footer-logo">flavorfusion</span>
       </p>
     </footer>
     <script src="/assets/js/app.js"></script>

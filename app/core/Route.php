@@ -29,7 +29,7 @@ class Route
             $controller = new $controller_name;
         }
         else {
-            echo 'Controller not exist';
+            echo 'Controller does not exist';
             exit;
         }
 
@@ -37,7 +37,7 @@ class Route
             $controller->$action_name();
         }
         else {
-            echo "Method not exist";
+            echo "Method does not exist";
         }
 
     }
